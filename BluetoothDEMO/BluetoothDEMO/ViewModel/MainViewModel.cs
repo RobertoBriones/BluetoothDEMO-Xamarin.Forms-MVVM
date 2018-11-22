@@ -83,6 +83,7 @@ namespace BluetoothDEMO.ViewModel
             if (bluetoothBLE.State == BluetoothState.Off)
             {
                 await App.Current.MainPage.DisplayAlert("Atencion", "Bluetooth deshabilitado.", "OK");
+                TextoButton = "Buscar";
             }
             else
             {
