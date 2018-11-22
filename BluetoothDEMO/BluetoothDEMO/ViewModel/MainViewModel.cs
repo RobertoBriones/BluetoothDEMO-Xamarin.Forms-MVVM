@@ -74,7 +74,7 @@ namespace BluetoothDEMO.ViewModel
         #endregion
 
 
-        #region metodos
+        #region Metodos
 
         private async void BuscarDispositivo()
         {
