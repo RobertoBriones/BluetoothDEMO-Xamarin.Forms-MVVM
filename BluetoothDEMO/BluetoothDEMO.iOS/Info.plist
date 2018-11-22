@@ -34,5 +34,7 @@
     <string>BluetoothDEMO</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+  <key>NSBluetoothPeripheralUsageDescription</key>
+  <string>This app likes to use your bluetooth... because you know... it is called bluetooth sample</string>
 </dict>
 </plist>
