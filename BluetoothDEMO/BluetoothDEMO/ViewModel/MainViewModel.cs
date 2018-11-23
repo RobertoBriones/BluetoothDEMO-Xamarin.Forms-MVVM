@@ -23,6 +23,8 @@ namespace BluetoothDEMO.ViewModel
 
         private IDevice _dispositivoseleccionado;
 
+        private bool _disponible = true;
+
         #endregion
 
 
@@ -39,6 +41,22 @@ namespace BluetoothDEMO.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        
+
+        public bool Disponible
+        {
+            get
+            {
+                return _disponible;
+            }
+            set
+            {
+                _disponible = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public string TextoButton
         {
@@ -78,17 +96,17 @@ namespace BluetoothDEMO.ViewModel
 
         private async void BuscarDispositivo()
         {
-
+            Disponible = false;
             TextoButton = "Buscando...";
             if (bluetoothBLE.State == BluetoothState.Off)
             {
-                await App.Current.MainPage.DisplayAlert("Atencion", "Bluetooth deshabilitado.", "OK");
+                await App.Current.MainPage.DisplayAlert("Atención", "Bluetooth deshabilitado.", "OK");
                 TextoButton = "Buscar";
             }
             else
             {
 
-                ListaViewModel.Clear();
+                //ListaViewModel.Clear();
 
                 adapter.ScanTimeout = 10000;
                 adapter.ScanMode = ScanMode.Balanced;
@@ -106,6 +124,7 @@ namespace BluetoothDEMO.ViewModel
 
                 await adapter.StartScanningForDevicesAsync();
                 TextoButton = "Buscar";
+                Disponible = true;
             }
         }
 

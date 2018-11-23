@@ -11,7 +11,7 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="{Binding TextoButton}"  Command="{Binding BuscarDispositivoCommand}" />
+            <Button Text="{Binding TextoButton}"  Command="{Binding BuscarDispositivoCommand}" IsEnabled="{Binding Disponible}" />
             <ListView 
                       ItemsSource="{Binding ListaViewModel}"
                       IsPullToRefreshEnabled="true"
